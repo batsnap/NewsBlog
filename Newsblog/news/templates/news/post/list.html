@@ -1,0 +1,11 @@
+{% extends "news/base.html" %}
+{% block title %}My Blog{% endblock %}
+{% block content %}
+    {% for post in posts %}
+        <a href="./{{post.slug}}"><h1>{{post.title}}</h1></a>
+        <a href="">{{post.author}}</a><br>
+        <small>{{post.created}}</small><br>
+        {{ post.body|truncatewords:30|linebreaks }} 
+        <br>
+    {% endfor %}
+{% endblock %}
